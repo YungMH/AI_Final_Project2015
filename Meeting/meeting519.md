@@ -1,4 +1,8 @@
-project idea 雛形 
+2015/5/19 Meeting
+
+時間：2100-2200
+
+Meeting 主題：final project idea 雛形 
 
 
 建立使用者的資料 登入介面（利用FB API） 儲存使用者看過的電影
