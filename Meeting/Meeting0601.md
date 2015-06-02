@@ -1,18 +1,19 @@
 #6/1 16:00-17:00 Meeting
 
--work
+##work
 
-1.imdb data displaying
+* imdb data displaying
+
+ * How to use Django (everyone)
+ * 連DB
+ * MovieLen -> import DB (思宇)
+
+* system (paper servey)
     
-    a.How to use Django (everyone)
-    b.連DB
-    c.MovieLen -> import DB (思宇)
+ *movie recommand system    (思宇 MH)
+ *movie classification  (YEN 偉傑)
 
-2. system (paper servey)
-    
-    a.movie recommand system    (思宇 MH)
-    b.movie classification  (YEN 偉傑)
+*登入介面暫時ignore
 
-3.登入介面暫時ignore
 
-NEXT MEETING    6/4 15:00
+**NEXT MEETING  6/4 15:00**
