@@ -16,18 +16,18 @@
 ##Some Reference Link:
 
 
-Try Django 1.8 Tutorial - 1 of 42
+Try Django 1.8 Tutorial - 1 of 42</br>
 <https://www.youtube.com/watch?v=KsLHt3D_jsE&index=1&list=PLEsfXFp6DpzRcd-q4vR5qAgOZUuz8041S>
 
-How to build a recommender system
+How to build a recommender system</br>
 <http://www.slideshare.net/blueace/how-to-build-a-recommender-system-presentation>
 
-MovieLens
+MovieLens</br>
 <http://grouplens.org/datasets/movielens/>
 
-People Who Like This Also Like ... 
+People Who Like This Also Like ... </br>
 <http://www.benfrederickson.com/distance-metrics/>
-
+</br>
 <http://imdbpy.sourceforge.net/index.html>
-
+</br>
 <http://blog.secaserver.com/2013/08/importing-imdb-sample-data-set-mysql/>
