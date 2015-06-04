@@ -1,0 +1,34 @@
+@charset "utf-8";
+/* CSS Document */
+*{font-family: Arial,Helvetica,sans-serif;
+word-wrap:break-word;word-break:break-all;-webkit-text-size-adjust:none;}
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,
+big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,
+fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{ 
+margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;font-size:100%; 
+font-family:inherit;vertical-align:baseline;}
+
+body{
+color:#333;
+background:#fff;
+/*font-size:62.5%;10px*/
+ font-size:75%;/*12px*/}
+:focus{outline:0;} 
+table{border-collapse:separate;border-spacing:0;} 
+caption,th,td{text-align:left;font-weight:normal;} 
+a img,iframe{border:none;}
+/*
+ol,ul { 
+list-style:none; 
+} */
+input,textarea,select,button{font-family:inherit;} 
+select{margin:inherit;} 
+
+
+/* Fixes incorrect placement of numbers in ol's in IE6/7 */ 
+/*ol { margin-left:2em; } ul{list-style-type:none;}*/
+.toleft{float:left;}
+.toright{float:right}
+.clr{clear:both;display:block;height:1px;}
+img{border:0;-ms-interpolation-mode:bicubic; /* Internet Explorer 7.0+ */}
