@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+  
+  <constant name="struts.locale" value="zh_TW" />
+  <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+  <constant name="struts.devMode" value="false" />
+  <constant name="struts.convention.classes.reload" value="true" />
+  <!-- constant name="struts.convention.package.locators" value="com.caves"/-->
+  <constant name="struts.convention.action.packages" value="action"/>
+  <constant name="struts.convention.result.path" value="/WEB-INF/pages/"/>
+  <constant name="struts.ui.theme" value="simple" />
+  <constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+  <constant name="struts.custom.i18n.resources" value="package"/>
+
+  <package name="riversoft-default" extends="struts-default">
+      
+    <result-types>
+      <result-type name="imageDownload" class="tw.com.riversoft.core.struts2.result.ImageDownloadResult"/>
+      <result-type name="simpleImageDownload" class="tw.com.riversoft.core.struts2.result.SimpleImageDownloadResult"/>
+      <result-type name="dynamicDownload" class="tw.com.riversoft.core.struts2.result.DynamicDownloadResult"/>
+      <result-type name="json" class="tw.com.riversoft.core.struts2.result.JsonResult"/>
+      <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
+      <result-type name="codegen" class="tw.com.riversoft.core.struts2.result.CodeImageGenerator"/>
+    </result-types>
+
+    <interceptors>
+      <interceptor-stack name="component">
+        <interceptor-ref name="exception"/>
+        <interceptor-ref name="prepare"/>
+        <interceptor-ref name="i18n"/>
+      </interceptor-stack>
+      
+      <interceptor-stack name="riversoftStack">
+        <interceptor-ref name="defaultStack"/>
+        <interceptor-ref name="fileUpload"/>
+      </interceptor-stack>
+      
+      <interceptor-stack name="riversoftWebServiceStack">
+        <!-- <interceptor-ref name="webService"/> -->
+        <interceptor-ref name="defaultStack"/>
+        <interceptor-ref name="fileUpload"/>
+      </interceptor-stack>
+        
+      <interceptor-stack name="noneStack">
+        <interceptor-ref name="i18n"/>
+        <interceptor-ref name="chain"/>
+      </interceptor-stack>
+      
+      <interceptor name="fileUpload" class="tw.com.riversoft.core.struts2.interceptor.FileSaveInterceptor"/>
+    </interceptors>
+    
+    <default-action-ref name="Index_doDispatcher" />
+  
+    <global-results>
+      <!-- 
+      <result name="login" type="redirectAction">
+        <param name="namespace">/</param>
+        <param name="actionName">Login</param>
+      </result>
+      <result name="b2c_login" type="redirectAction">
+        <param name="namespace">/</param>
+        <param name="actionName">Index_doDispatcher</param>
+      </result>
+       -->
+     
+      <result name="exceptionHandler" type="chain">
+        <param name="namespace">/</param>
+        <param name="actionName">defaultExceptionHandler</param>
+      </result>
+      <result name="b2c_resetPassword" type="tiles">b2c/resetPassword</result>
+      <result name="error">/error.jsp</result>
+      <result name="json" type="json"></result>
+    </global-results>
+    
+   <!--   
+    <global-exception-mappings>
+      <exception-mapping exception="java.lang.Exception" result="exceptionHandler"/>
+    </global-exception-mappings>    
+    -->
+     
+    <action name="image">
+      <result name="success" type="simpleImageDownload"></result>
+    </action>
+    
+    <action name="download">
+      <result name="success" type="dynamicDownload"></result>
+    </action>
+    
+    <action name="codegen">
+      <result type="codegen"></result>
+      <interceptor-ref name="component"></interceptor-ref>
+    </action>
+    
+    
+  </package>
+  
+</struts>

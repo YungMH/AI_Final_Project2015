@@ -1,0 +1,83 @@
+.header {
+	
+	background-color: white;
+	border-color: #AAAAAA;
+	height:95px;
+	color:#888888;
+	font-family:DFKai-sb;
+}
+
+.navbar-header .navbar-brand {
+	
+	font-size:30px;
+	padding-bottom: 30px;
+	color:#888888;
+}
+
+.navbar-inverse {
+	
+	color:#888888;
+} 
+
+
+.send-position {
+	
+	margin-bottom:13px;
+}
+
+.form-position {
+	
+	margin-left:20%;
+	margin-top:30%;
+}
+
+.footer {
+	
+	border-color:#AAAAAA;
+	position:fixed;
+	bottom: 0px;
+	width: 100%;
+	height: 65px;
+}
+
+.form-group {
+	
+	margin-bottom: 5px;
+}
+
+.login-label {
+	
+	margin-left: 83%;
+	margin-top: 3%;
+	color: white;
+}
+
+.center {
+	
+	position: fixed;
+	top:95px;
+	left:0px;
+	right:0px;
+	bottom:50px;
+	overflow: auto;
+}
+
+.interval {
+	float:left;
+	padding-left:30px;
+	margin-top:29px;
+}
+
+.header-ul {
+	
+	list-style:none; 
+	overflow: hidden;
+	margin-top:10px;
+}
+
+.attending-title {
+	
+	float:left; 
+	padding-top:10px; 
+	padding-left:10px;
+}
