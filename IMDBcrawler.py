@@ -23,10 +23,10 @@ with open('links.csv', 'r') as csvfile:
 # Create the object that will be used to access the IMDb's database.
 access = imdb.IMDb() # by default access the web.
 
-i = 1
+i = 26
 #csvlist = []
 #directorbefore  = []
-f = open("imdb.csv", 'wb')
+f = open("imdb1.csv", 'wb')
 while i < 8571:
 	movie = access.get_movie(imdbid[i])
 	#print str(movie['cover url'])
@@ -38,9 +38,16 @@ while i < 8571:
 	#print title
 	"""list top 5 cast """
 	for s in movie['cast'][:5]:
+		#print s 
 		cast = access.search_person(s["name"])[0]
+		#print cast
 		access.update(cast)
-		castlist.append('%s' %cast)
+		#print cast
+		#cast = cast.decode('utf-8')
+		#print type(cast)
+		castlist.append(u'%s' %cast)
+		#castlist.append(str(cast))
+	#print castlist
 	castlist[0:] = ['|'.join(castlist[0:])]
 	#print castlist
 
@@ -48,7 +55,7 @@ while i < 8571:
 	for s in movie['director']:
 		director = access.search_person(s["name"])[0]
 		access.update(director)
-		directorlist.append('%s' %director)
+		directorlist.append(u'%s' %director)
 	directorlist[0:] = ['|'.join(directorlist[0:])]
 	#print directorlist
 
