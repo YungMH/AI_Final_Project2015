@@ -1,5 +1,11 @@
-# coding=UTF-8
-# Import the imdb package.
+# coding=utf-8
+"""
+This IMDB Crawler is to GET movie
+rating ,year,img_url,Director list,Actor list top 5
+and based on MovieLen databsed MovieId
+
+This is for our AI_FinalProject 
+"""
 import imdb
 import csv
 import sys
@@ -28,14 +34,15 @@ while i < 8571:
 	castlist = []
 	list = []
 	#print movie['cast']
-	
+	#title = movie['title'].encode('utf-8')
+	#print title
 	"""list top 5 cast """
 	for s in movie['cast'][:5]:
 		cast = access.search_person(s["name"])[0]
 		access.update(cast)
 		castlist.append('%s' %cast)
 	castlist[0:] = ['|'.join(castlist[0:])]
-	print castlist
+	#print castlist
 
 	"""list all the director """
 	for s in movie['director']:
@@ -43,10 +50,11 @@ while i < 8571:
 		access.update(director)
 		directorlist.append('%s' %director)
 	directorlist[0:] = ['|'.join(directorlist[0:])]
+	#print directorlist
 
 	list = [movieid[i], movie['rating'], movie['year'], str(movie['cover url'])]
-	list.append(directorlist[0])
-	list.append(castlist[0])
+	list.append(directorlist[0].encode('utf-8'))
+	list.append(castlist[0].encode('utf-8'))
 	print list
 	wr = csv.writer(f)
 	wr.writerow(list)
