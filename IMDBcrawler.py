@@ -18,30 +18,53 @@ with open('links.csv', 'r') as csvfile:
 access = imdb.IMDb() # by default access the web.
 
 i = 1
-csvlist = []
-directorlist = []
-#while i < 8571:
-movie = access.get_movie(imdbid[i])
-#print str(movie['cover url'])
-for s in movie['director']:
-	#print "Director: ", s
-	for k in access.search_person(str(s))[:1]:
-		director = access.get_person(k.personID)
-		#print "Movies directed by %s" % director
-		directorlist.append(str(director))
-	#print directorlist
-#print director	
-list = [movieid[i], movie['rating'], movie['year'], directorlist, str(movie['cover url'])]
-csvlist.append(list)
+#csvlist = []
+#directorbefore  = []
+list = []
+while i < 8571:
+	movie = access.get_movie(imdbid[29])
+	#print str(movie['cover url'])
+	directorlist = []
+	for s in movie['director']:
+		director = access.search_person(s["name"])[0]
+		access.update(director)
+		#print director
+		#print "Director: ", s
+		#for k in access.search_person(str(s))[:1]:
+		#	director = access.get_person(k.personID)
+			#print "Movies directed by %s" % director
+			#directorlist.append(str(director))
+		#if s > 0 :
+		#directorlist = '%s | %s' % directorbefore, director
+		#else:
+		#	directorlist = '%s' % director
+		directorlist.append('%s' % director)
+		#directorbefore = directorlist
+		#print directorbefore
+	print directorlist
+#print director
+	#for d in directorlist[0:]:	
+	#	list[3] = d
+	#print list[3]
+	list = [movieid[i], movie['rating'], movie['year'], movie['cover url']]
+	print directorlist[0]+directorlist[1]
+	#print list
+	"""f = open("imdb.csv","w")
+	w = csv.writer(f)  
+	w.writerows(str([list])+'\n')
+	print i 
+	f.close() """
+	i += 1
+#csvlist.append(list)
 #print imdbid[i]
 #print movie['title']
 """print movie['year']
 print movie['cover url']"""
-print csvlist
-i += 1
+#print csvlist
 
+"""
 f = open("imdb.csv","w")
 w = csv.writer(f)  
-w.writerows(csvlist)  
+w.writerows(csvlist)  """
 f.close() 
 
