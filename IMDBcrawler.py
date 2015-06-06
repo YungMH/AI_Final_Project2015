@@ -38,17 +38,18 @@ while i < 8571:
 		#directorlist = '%s | %s' % directorbefore, director
 		#else:
 		#	directorlist = '%s' % director
-		directorlist.append('%s' % director)
+		directorlist.append('%s' %director)
 		#directorbefore = directorlist
 		#print directorbefore
+	directorlist[0:] = ['|'.join(directorlist[0:])]
 	print directorlist
 #print director
 	#for d in directorlist[0:]:	
 	#	list[3] = d
 	#print list[3]
 	list = [movieid[i], movie['rating'], movie['year'], movie['cover url']]
-	print directorlist[0]+directorlist[1]
-	#print list
+	list.append(directorlist[0])
+	print list
 	"""f = open("imdb.csv","w")
 	w = csv.writer(f)  
 	w.writerows(str([list])+'\n')
