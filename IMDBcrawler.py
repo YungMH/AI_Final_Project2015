@@ -9,7 +9,6 @@ This is for our AI_FinalProject
 import imdb
 import csv
 import sys
-
 #f = open('links.csv', 'r')
 
 with open('links.csv', 'r') as csvfile:
@@ -23,10 +22,10 @@ with open('links.csv', 'r') as csvfile:
 # Create the object that will be used to access the IMDb's database.
 access = imdb.IMDb() # by default access the web.
 
-i = 26
+i = 1
 #csvlist = []
 #directorbefore  = []
-f = open("imdb1.csv", 'wb')
+f = open("imdb.csv", 'wb')
 while i < 8571:
 	movie = access.get_movie(imdbid[i])
 	#print str(movie['cover url'])
@@ -59,7 +58,13 @@ while i < 8571:
 	directorlist[0:] = ['|'.join(directorlist[0:])]
 	#print directorlist
 
-	list = [movieid[i], movie['rating'], movie['year'], str(movie['cover url'])]
+	""" test movie url """
+	#print movie
+	if movie.has_key('cover url'):
+		list = [movieid[i], movie['rating'], movie['year'], str(movie['cover url'])]
+	else:
+		list = [movieid[i], movie['rating'], movie['year'], '']
+
 	list.append(directorlist[0].encode('utf-8'))
 	list.append(castlist[0].encode('utf-8'))
 	print list
