@@ -9,6 +9,7 @@ This is for our AI_FinalProject
 import imdb
 import csv
 import sys
+import time
 #f = open('links.csv', 'r')
 
 with open('links.csv', 'r') as csvfile:
@@ -25,8 +26,8 @@ access = imdb.IMDb() # by default access the web.
 i = 1
 #csvlist = []
 #directorbefore  = []
-f = open("imdb.csv", 'wb')
-while i < 8571:
+f = open("imdb(1-8571).csv", 'wb')
+while i < 8572:
 	movie = access.get_movie(imdbid[i])
 	#print str(movie['cover url'])
 	directorlist = []
@@ -42,14 +43,11 @@ while i < 8571:
 		#print cast
 		access.update(cast)
 		#print cast
-		#cast = cast.decode('utf-8')
 		#print type(cast)
 		castlist.append(u'%s' %cast)
-		#castlist.append(str(cast))
 	#print castlist
 	castlist[0:] = ['|'.join(castlist[0:])]
 	#print castlist
-
 	"""list all the director """
 	for s in movie['director']:
 		director = access.search_person(s["name"])[0]
@@ -57,14 +55,12 @@ while i < 8571:
 		directorlist.append(u'%s' %director)
 	directorlist[0:] = ['|'.join(directorlist[0:])]
 	#print directorlist
-
 	""" test movie url """
 	#print movie
 	if movie.has_key('cover url'):
 		list = [movieid[i], movie['rating'], movie['year'], str(movie['cover url'])]
 	else:
 		list = [movieid[i], movie['rating'], movie['year'], '']
-
 	list.append(directorlist[0].encode('utf-8'))
 	list.append(castlist[0].encode('utf-8'))
 	print list
