@@ -2,7 +2,7 @@
 
 ##Schedul
 
-**Next Meeting 6/5 15:30**
+6/8 We crawler some IMDB information by MovieLen database
 
 6/4 方向確定,使用MOVIELEN DATA 來training model 
 
@@ -19,6 +19,8 @@ filter some user data -> see accuracy between original data and model predict ->
 
 ##Some Reference Link:
 
+IMDBPY</br>
+<http://imdbpy.sourceforge.net>
 
 **Tutorial - the recommender problem revisited**</br>
 <http://www.slideshare.net/xamat/kdd-2014-tutorial-the-recommender-problem-revisited>
@@ -35,6 +37,8 @@ MovieLens</br>
 People Who Like This Also Like ... </br>
 <http://www.benfrederickson.com/distance-metrics/>
 </br>
-<http://imdbpy.sourceforge.net/index.html>
+<http://blog.xuite.net/metafun/life/131996342-協同過濾（Collaborative+Filtering）簡介>
+</br>
+<http://www.ics.uci.edu/~welling/teaching/CS77Bwinter12/presentations/course_Ricci/13-Item-to-Item-Matrix-CF.pdf>
 </br>
 <http://blog.secaserver.com/2013/08/importing-imdb-sample-data-set-mysql/>

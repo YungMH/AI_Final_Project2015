@@ -30,6 +30,8 @@ f = open("imdb(1-8571).csv", 'wb')
 while i < 8572:
 	movie = access.get_movie(imdbid[i])
 	#print str(movie['cover url'])
+	description = movie.get('plot outline')
+	print description
 	directorlist = []
 	castlist = []
 	list = []
